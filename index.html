@@ -243,98 +243,47 @@
           </dl>
         </div>
 
-        <!-- ฉาก Hero (SVG เคลื่อนไหว) -->
+        <!-- ฉาก Hero: สไลเดอร์เปรียบเทียบ ก่อน/หลังกรอง -->
         <div class="lg:col-span-6 reveal">
           <div class="relative">
-            <div class="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] overflow-hidden rounded-[2rem] bg-stone-300 shadow-lift ring-1 ring-black/5">
-              <svg id="heroScene" class="absolute inset-0 w-full h-full" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <defs>
-                  <linearGradient id="hsSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9a193"/><stop offset=".55" stop-color="#cfc5b4"/><stop offset="1" stop-color="#e2d6c1"/></linearGradient>
-                  <linearGradient id="hsRoad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3b3d"/><stop offset="1" stop-color="#1c1c1e"/></linearGradient>
-                  <linearGradient id="hsBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34343a"/><stop offset=".5" stop-color="#17171a"/><stop offset="1" stop-color="#0b0b0c"/></linearGradient>
-                  <linearGradient id="hsGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dbf1ff"/></linearGradient>
-                  <radialGradient id="hsBubble" cx="35%" cy="35%" r="65%"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".45" stop-color="#7dd3fc" stop-opacity=".75"/><stop offset="1" stop-color="#38bdf8" stop-opacity=".15"/></radialGradient>
-                  <clipPath id="hsWin"><path d="M96,86 Q124,34 158,26 L312,25 Q334,27 354,46 L390,84 Z" transform="translate(80,430)"/></clipPath>
-                  <filter id="hsBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
-                  <filter id="hsSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
-                </defs>
-
-                <!-- ท้องฟ้าหมอกควัน -->
-                <rect width="800" height="800" fill="url(#hsSky)"/>
-                <g class="city" fill="#9c9282" opacity=".75">
-                  <path transform="translate(0,0)" d="M0,520 L0,430 L40,430 L40,380 L80,380 L80,445 L120,445 L120,350 L165,350 L165,420 L200,420 L200,395 L250,395 L250,455 L290,455 L290,370 L330,370 L330,430 L370,430 L370,405 L400,405 L400,520 Z"/><path transform="translate(400,0)" d="M0,520 L0,430 L40,430 L40,380 L80,380 L80,445 L120,445 L120,350 L165,350 L165,420 L200,420 L200,395 L250,395 L250,455 L290,455 L290,370 L330,370 L330,430 L370,430 L370,405 L400,405 L400,520 Z"/><path transform="translate(800,0)" d="M0,520 L0,430 L40,430 L40,380 L80,380 L80,445 L120,445 L120,350 L165,350 L165,420 L200,420 L200,395 L250,395 L250,455 L290,455 L290,370 L330,370 L330,430 L370,430 L370,405 L400,405 L400,520 Z"/><path transform="translate(1200,0)" d="M0,520 L0,430 L40,430 L40,380 L80,380 L80,445 L120,445 L120,350 L165,350 L165,420 L200,420 L200,395 L250,395 L250,455 L290,455 L290,370 L330,370 L330,430 L370,430 L370,405 L400,405 L400,520 Z"/>
-                </g>
-                <g filter="url(#hsBlur)" opacity=".55">
-                  <ellipse class="smog" cx="220" cy="330" rx="260" ry="70" fill="#8f8474"/>
-                  <ellipse class="smog" cx="640" cy="260" rx="240" ry="60" fill="#9a8f7e" style="animation-delay:-5s"/>
-                  <ellipse class="smog" cx="420" cy="470" rx="320" ry="60" fill="#a0937f" style="animation-delay:-9s"/>
-                </g>
-
-                <!-- ถนน -->
-                <rect y="520" width="800" height="280" fill="url(#hsRoad)"/>
-                <rect y="520" width="800" height="6" fill="#595959"/>
-                <g class="lane" fill="#fbbf24"><rect x="0" y="700" width="80" height="9" rx="2"/><rect x="160" y="700" width="80" height="9" rx="2"/><rect x="320" y="700" width="80" height="9" rx="2"/><rect x="480" y="700" width="80" height="9" rx="2"/><rect x="640" y="700" width="80" height="9" rx="2"/><rect x="800" y="700" width="80" height="9" rx="2"/><rect x="960" y="700" width="80" height="9" rx="2"/><rect x="1120" y="700" width="80" height="9" rx="2"/><rect x="1280" y="700" width="80" height="9" rx="2"/><rect x="1440" y="700" width="80" height="9" rx="2"/><rect x="1600" y="700" width="80" height="9" rx="2"/></g>
-
-                <!-- รถบรรทุกคันหน้า (ปล่อยควัน) -->
-                <g>
-                  <rect x="640" y="372" width="240" height="176" rx="6" fill="#2d2d30"/>
-                  <rect x="640" y="372" width="240" height="14" fill="#fbbf24"/>
-                  <rect x="646" y="500" width="10" height="26" fill="#ef4444"/>
-                  <rect x="632" y="540" width="250" height="14" rx="3" fill="#18181a"/>
-                  <rect x="636" y="556" width="22" height="7" rx="3" fill="#444"/>
-                  <circle cx="712" cy="566" r="30" fill="#111"/><circle cx="712" cy="566" r="13" fill="#555"/>
-                </g>
-                <g id="heroSmoke" filter="url(#hsSoft)"></g>
-
-                <!-- เงารถ -->
-                <ellipse cx="335" cy="620" rx="255" ry="15" fill="#000" opacity=".4"/>
-
-                <!-- รถของเรา -->
-                <g class="bob">
-                  <g transform="translate(80,430)">
-                    <path d="M10,150 L10,112 Q12,96 34,92 L80,88 Q112,24 152,14 L318,12 Q344,14 370,40 L410,84 L480,96 Q502,100 504,118 L506,150 Z" fill="url(#hsBody)"/>
-                    <path d="M40,93 L80,89 Q112,26 152,16 L318,14 Q342,16 366,40 L406,84" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"/>
-                    <path d="M96,86 Q124,34 158,26 L312,25 Q334,27 354,46 L390,84 Z" fill="url(#hsGlass)"/>
-                    <!-- เบาะในรถ -->
-                    <g fill="#cfd8e3" opacity=".7">
-                      <path d="M150,86 L158,44 Q162,36 172,38 L180,40 Q186,44 184,52 L176,86 Z"/>
-                      <path d="M268,86 L276,44 Q280,36 290,38 L298,40 Q304,44 302,52 L294,86 Z"/>
-                    </g>
-                    <rect x="232" y="22" width="10" height="66" fill="#141416"/>
-                    <rect x="16" y="116" width="486" height="7" rx="2" fill="#fbbf24"/>
-                    <path d="M242,88 L242,148" stroke="#000" stroke-opacity=".45" stroke-width="2"/>
-                    <path d="M488,104 L504,110 L501,121 L480,117 Z" fill="#fff6c2"/>
-                    <rect x="10" y="100" width="10" height="15" rx="2" fill="#ef4444"/>
-                    <!-- แผ่นกรองแอร์ที่ช่องรับอากาศ -->
-                    <g>
-                      <rect x="372" y="62" width="36" height="22" rx="4" fill="#fbbf24" stroke="#111" stroke-width="2"/>
-                      <polyline points="376,80 380,66 384,80 388,66 392,80 396,66 400,80 404,66" fill="none" stroke="#111" stroke-width="1.6"/>
-                    </g>
-                    <circle cx="110" cy="150" r="42" fill="#1c1c1e"/><circle cx="400" cy="150" r="42" fill="#1c1c1e"/>
-                    <g><circle cx="110" cy="150" r="35" fill="#0d0d0e"/><circle cx="110" cy="150" r="20" fill="#cbd5e1"/>
-                      <g class="wheel" stroke="#475569" stroke-width="4"><line x1="110" y1="132" x2="110" y2="168"/><line x1="92" y1="150" x2="128" y2="150"/><line x1="97" y1="137" x2="123" y2="163"/><line x1="123" y1="137" x2="97" y2="163"/><circle cx="110" cy="150" r="20" fill="none" stroke="none"/></g>
-                      <circle cx="110" cy="150" r="5" fill="#fbbf24"/></g>
-                    <g><circle cx="400" cy="150" r="35" fill="#0d0d0e"/><circle cx="400" cy="150" r="20" fill="#cbd5e1"/>
-                      <g class="wheel" stroke="#475569" stroke-width="4"><line x1="400" y1="132" x2="400" y2="168"/><line x1="382" y1="150" x2="418" y2="150"/><line x1="387" y1="137" x2="413" y2="163"/><line x1="413" y1="137" x2="387" y2="163"/><circle cx="400" cy="150" r="20" fill="none" stroke="none"/></g>
-                      <circle cx="400" cy="150" r="5" fill="#fbbf24"/></g>
-                  </g>
-                  <!-- ฝอยกลมสีฟ้าในรถ (อากาศสดชื่น) -->
-                  <g id="heroBubbles" clip-path="url(#hsWin)"></g>
-                  <!-- แสงสว่างในรถ -->
-                  <path d="M96,86 Q124,34 158,26 L312,25 Q334,27 354,46 L390,84 Z" transform="translate(80,430)" fill="#ffffff" opacity=".15"/>
-                </g>
-
-                <!-- ฝุ่นละอองภายนอก -->
-                <g id="heroDust"></g>
-              </svg>
-              <!-- ป้ายกำกับ -->
-              <div class="absolute top-4 left-4 sm:top-6 sm:left-6 rounded-xl bg-black/60 backdrop-blur px-3 py-2 text-white">
-                <p class="text-[11px] text-white/70">ถนนภายนอก</p>
-                <p class="text-xs sm:text-sm font-semibold">ฝุ่น PM2.5 · ควันรถ</p>
+            <div class="relative aspect-[4/5] sm:aspect-[4/3] overflow-hidden rounded-[2rem] bg-stone-300 shadow-lift ring-1 ring-black/5">
+              <div id="heroCompare" class="absolute inset-0 select-none touch-pan-y" style="--pos:50%">
+                <!-- ฝั่งขวา: เมืองในหมอกฝุ่น (ถนนภายนอก) -->
+                <img src="assets/hero-smog.webp" alt="ถนนและเมืองที่ปกคลุมด้วยฝุ่น PM2.5" class="absolute inset-0 w-full h-full object-cover object-[70%_50%]" draggable="false" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#5a4632]/40 via-transparent to-[#c9a27a]/20" aria-hidden="true"></div>
+                <!-- ฝั่งซ้าย: ในรถที่มีอากาศสะอาด (ตัดด้วย clip-path ตามตำแหน่งเส้นแบ่ง) -->
+                <div class="absolute inset-0" style="clip-path: inset(0 calc(100% - var(--pos)) 0 0);">
+                  <img src="assets/hero-cabin.webp" alt="ผู้โดยสารยิ้มแย้มในรถที่มีอากาศสะอาด" class="absolute inset-0 w-full h-full object-cover object-[30%_50%]" style="filter:brightness(1.08) saturate(1.08)" draggable="false" />
+                  <div class="absolute inset-0 bg-gradient-to-br from-white/25 via-sky-100/10 to-sky-200/25" aria-hidden="true"></div>
+                </div>
+                <!-- อนุภาค: ฝุ่น (ขวา) → ฝอยสีฟ้า (ซ้าย) -->
+                <canvas id="heroParticles" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+                <!-- เส้นแบ่ง = แผ่นกรอง AAF -->
+                <div class="absolute inset-y-0 w-0" style="left: var(--pos);">
+                  <div class="absolute inset-y-0 -left-[3px] w-[6px] bg-brand-400 shadow-[0_0_24px_rgba(251,191,36,0.9)]"></div>
+                  <div class="stripe absolute inset-y-0 -left-[1px] w-[2px] opacity-60"></div>
+                  <button type="button" id="heroHandle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="เลื่อนเพื่อเปรียบเทียบอากาศก่อนและหลังกรอง"
+                          class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 grid place-items-center w-16 h-16 rounded-full bg-brand-950 ring-4 ring-brand-400 shadow-lift cursor-ew-resize transition-transform hover:scale-110 focus:outline-none focus-visible:ring-8">
+                    <svg class="w-9 h-9" viewBox="0 0 36 36" aria-hidden="true">
+                      <rect x="7" y="9" width="22" height="18" rx="3" fill="#fbbf24"/>
+                      <polyline points="10,24 13,12 16,24 19,12 22,24 25,12" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M3 18h3M30 18h3" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <!-- คำแนะนำให้ลาก -->
+                <div id="heroHint" class="pointer-events-none absolute bottom-20 sm:bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs font-medium text-white backdrop-blur transition-opacity duration-700">
+                  <span aria-hidden="true">←</span><span>ลากเพื่อเปรียบเทียบ</span><span aria-hidden="true">→</span>
+                </div>
               </div>
-              <div class="absolute top-4 right-4 sm:top-6 sm:right-6 rounded-xl bg-white/85 backdrop-blur px-3 py-2 text-right shadow-soft">
+              <!-- ป้ายกำกับ -->
+              <div class="pointer-events-none absolute top-4 left-4 sm:top-6 sm:left-6 rounded-xl bg-white/85 backdrop-blur px-3 py-2 shadow-soft">
                 <p class="text-[11px] text-slate-500">ภายในห้องโดยสาร</p>
                 <p class="text-xs sm:text-sm font-semibold text-sky-700">อากาศสะอาด สดชื่น</p>
+              </div>
+              <div class="pointer-events-none absolute top-4 right-4 sm:top-6 sm:right-6 rounded-xl bg-black/60 backdrop-blur px-3 py-2 text-right text-white">
+                <p class="text-[11px] text-white/70">ถนนภายนอก</p>
+                <p class="text-xs sm:text-sm font-semibold">ฝุ่น PM2.5 · ควันรถ</p>
               </div>
             </div>
             <div class="absolute -bottom-6 left-4 sm:-left-6 max-w-[17rem] rounded-2xl bg-brand-950 p-5 text-white shadow-lift">
@@ -1160,6 +1109,10 @@
       'แผนที่ AAF โครงการมหาชัยพร็อพเพอร์ตี้': ['Map of AAF, Mahachai Property', 'AAF 位置地圖'],
       'เช่น ต้องการผลิตแผ่นกรองแอร์แบรนด์ของตัวเอง จำนวนรุ่น และปริมาณโดยประมาณ': ['e.g. your own-brand filter plan, number of models and estimated volume', '例如：自有品牌濾網需求、車型數量與預估數量'],
       'ติดต่อจากเว็บไซต์': ['AAF website enquiry', 'AAF 網站詢問'],
+      'ลากเพื่อเปรียบเทียบ': ['Drag to compare', '拖曳比較'],
+      'เลื่อนเพื่อเปรียบเทียบอากาศก่อนและหลังกรอง': ['Slide to compare air before and after filtering', '滑動比較過濾前後的空氣'],
+      'ถนนและเมืองที่ปกคลุมด้วยฝุ่น PM2.5': ['A city and roads covered in PM2.5 haze', '被 PM2.5 霧霾籠罩的城市與道路'],
+      'ผู้โดยสารยิ้มแย้มในรถที่มีอากาศสะอาด': ['Smiling passengers enjoying clean air in the car', '在潔淨空氣中歡笑的車內乘客'],
 
     };
 
@@ -1382,94 +1335,102 @@
 
 
 
-    // --- Hero: ฝุ่น/ควันบนถนน ถูกดูดเข้าแผ่นกรองแอร์ → กลายเป็นฝอยกลมสีฟ้าในรถ ---
+    // --- Hero: สไลเดอร์เปรียบเทียบ + ฝุ่นที่ผ่านแผ่นกรองกลายเป็นฝอยสีฟ้า ---
     (function () {
-      const svg = document.getElementById('heroScene');
-      if (!svg) return;
-      const NS = 'http://www.w3.org/2000/svg';
-      const dustG = svg.querySelector('#heroDust'), bubG = svg.querySelector('#heroBubbles'), smokeG = svg.querySelector('#heroSmoke');
-      const SP = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0.5 : 1;
+      const root = document.getElementById('heroCompare');
+      if (!root) return;
+      const handle = document.getElementById('heroHandle');
+      const hint = document.getElementById('heroHint');
+      const canvas = document.getElementById('heroParticles');
+      const ctx = canvas.getContext('2d');
+      const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const SP = calm ? 0.5 : 1;
       const rand = (a, b) => a + Math.random() * (b - a);
-      const pick = (arr) => arr[(Math.random() * arr.length) | 0];
-      const INTAKE = { x: 470, y: 503 };          // ช่องรับอากาศ/แผ่นกรอง (พิกัดใน viewBox)
-      const CABIN = { x0: 186, x1: 462, y0: 458, y1: 514 };
-      const el = (g, tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); g.appendChild(e); return e; };
-      const DUST_COLORS = ['#6f604e', '#857865', '#5a5048', '#9a8563', '#4d4640'];
+      let pos = 58, userMoved = false, W = 0, H = 0, running = false, last = 0, t = 0;
 
-      // ฝุ่นลอยทั่วฉาก
-      const dust = [];
-      function addDust(init, seek) {
-        const d = seek
-          ? { x: rand(520, 700), y: rand(360, 470), seek: true }
-          : { x: init ? rand(0, 800) : rand(800, 860), y: rand(60, 660), seek: false };
-        d.r = rand(1.6, 4.8); d.vx = -rand(25, 70); d.vy = rand(-8, 8); d.a = rand(0.35, 0.8); d.ph = rand(0, 6.28);
-        d.e = el(dustG, 'circle', { r: d.r, fill: pick(DUST_COLORS), opacity: d.a });
-        dust.push(d);
+      function setPos(p) {
+        pos = Math.max(8, Math.min(92, p));
+        root.style.setProperty('--pos', pos + '%');
+        handle.setAttribute('aria-valuenow', Math.round(pos));
       }
-      for (let i = 0; i < 70; i++) addDust(true, false);
-
-      // ฝอยกลมสีฟ้าในห้องโดยสาร
-      const bubbles = [];
-      function addBubble(x, y) {
-        const b = { x: x ?? rand(CABIN.x0, CABIN.x1), y: y ?? rand(CABIN.y0, CABIN.y1), r: rand(3.5, 9), vx: rand(-6, 6), vy: -rand(3, 10), life: 0, max: rand(3, 6) };
-        b.e = el(bubG, 'circle', { r: b.r, fill: 'url(#hsBubble)', opacity: 0 });
-        bubbles.push(b);
+      function fromEvent(e) {
+        const r = root.getBoundingClientRect();
+        return ((e.clientX - r.left) / r.width) * 100;
       }
-      for (let i = 0; i < 26; i++) { addBubble(); bubbles[i].life = rand(0, 3); }
-
-      // ควันจากท่อไอเสียรถคันหน้า
-      const smoke = [];
-      function addSmoke() {
-        const s = { x: 640, y: 560, r: rand(6, 10), vx: -rand(28, 50), vy: -rand(5, 14), life: 0, max: rand(2.6, 3.6) };
-        s.e = el(smokeG, 'circle', { r: s.r, fill: pick(['#5f5f5f', '#6e6a64', '#7c766c']), opacity: 0.5 });
-        smoke.push(s);
+      function interacted() {
+        if (userMoved) return;
+        userMoved = true; hint.style.opacity = 0;
       }
+      let dragging = false;
+      root.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'touch' && e.target !== handle) return;   // มือถือ: ลากที่ปุ่มเท่านั้น (ไม่บังการเลื่อนหน้า)
+        dragging = true; interacted(); root.setPointerCapture(e.pointerId); setPos(fromEvent(e));
+      });
+      root.addEventListener('pointermove', (e) => { if (dragging) setPos(fromEvent(e)); });
+      root.addEventListener('pointerup', () => { dragging = false; });
+      root.addEventListener('pointercancel', () => { dragging = false; });
+      handle.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { interacted(); setPos(pos - 4); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { interacted(); setPos(pos + 4); e.preventDefault(); }
+      });
 
-      let last = 0, running = false, tSeek = 0, tSmoke = 0, t = 0;
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const r = canvas.getBoundingClientRect();
+        W = r.width; H = r.height;
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      new ResizeObserver(resize).observe(canvas);
+
+      // อนุภาค: ฝุ่นเคลื่อนเข้าหาแผ่นกรอง เมื่อข้ามเส้นแบ่งจะกลายเป็นฝอยกลมสีฟ้า
+      const ps = [];
+      const DUST = ['120,98,72', '140,118,90', '96,82,68', '160,132,96'];
+      function spawn(init) {
+        const x = init ? rand(0, W) : rand(W, W + 20);
+        ps.push({
+          x, y: rand(0, H), r: rand(1.4, 3.6), vx: rand(28, 70) * (W / 600 + 0.4), ph: rand(0, 6.28),
+          amp: rand(4, 14), c: DUST[(Math.random() * DUST.length) | 0], a: rand(0.35, 0.8),
+          clean: false, life: 0, max: rand(2.2, 4),
+        });
+      }
+      const target = () => Math.round(W * H / 5200);
+
       function step(dt) {
         t += dt;
-        tSeek += dt; tSmoke += dt;
-        if (tSeek > 0.18) { tSeek = 0; addDust(false, true); }
-        if (tSmoke > 0.3) { tSmoke = 0; addSmoke(); }
-
-        for (let i = dust.length - 1; i >= 0; i--) {
-          const d = dust[i];
-          if (d.seek) {
-            const dx = INTAKE.x - d.x, dy = INTAKE.y - d.y, dist = Math.hypot(dx, dy) || 1;
-            const sp = 90 + (200 - Math.min(200, dist));
-            d.x += (dx / dist) * sp * dt; d.y += (dy / dist) * sp * dt;
-            if (dist < 7) {             // ถูกดักจับ → ปล่อยอากาศสะอาดเข้าห้องโดยสาร
-              d.e.remove(); dust.splice(i, 1);
-              if (bubbles.length < 40) addBubble(rand(380, CABIN.x1), rand(488, 512));
-              continue;
-            }
-            d.e.setAttribute('opacity', Math.min(d.a, dist / 60));
+        // เส้นแบ่งแกว่งเองช้าๆ จนกว่าผู้ใช้จะลาก
+        if (!userMoved) setPos(58 + Math.sin(t * 0.45) * 12);
+        const div = W * pos / 100;
+        while (ps.length < target()) spawn(ps.length < target() * 0.8 && t < 0.1);
+        ctx.clearRect(0, 0, W, H);
+        for (let i = ps.length - 1; i >= 0; i--) {
+          const p = ps[i];
+          p.x -= p.vx * dt * (p.clean ? 0.55 : 1);
+          const yy = p.y + Math.sin(p.x / 45 + p.ph) * p.amp - (p.clean ? p.life * 12 : 0);
+          if (!p.clean && p.x <= div) { p.clean = true; p.life = 0; p.r = rand(3, 7.5); }
+          if (p.clean) {
+            p.life += dt;
+            const k = p.life / p.max;
+            if (k >= 1 || p.x < -20) { ps.splice(i, 1); continue; }
+            const o = (k < 0.15 ? k / 0.15 : 1 - (k - 0.15) / 0.85) * 0.85;
+            const g = ctx.createRadialGradient(p.x - p.r * 0.3, yy - p.r * 0.3, 0, p.x, yy, p.r);
+            g.addColorStop(0, `rgba(255,255,255,${o})`);
+            g.addColorStop(0.5, `rgba(125,211,252,${o * 0.8})`);
+            g.addColorStop(1, `rgba(56,189,248,${o * 0.15})`);
+            ctx.fillStyle = g;
+            ctx.beginPath(); ctx.arc(p.x, yy, p.r, 0, Math.PI * 2); ctx.fill();
           } else {
-            d.x += d.vx * dt; d.y += (d.vy + Math.sin(t * 1.5 + d.ph) * 6) * dt;
-            if (d.x < -10) { d.x = rand(805, 860); d.y = rand(60, 660); }
+            // ฝุ่นใกล้เส้นแบ่งจะถูกดูดเข้าหาแผ่นกรอง
+            const near = Math.max(0, 1 - (p.x - div) / 80);
+            ctx.fillStyle = `rgba(${p.c},${p.a})`;
+            ctx.beginPath(); ctx.arc(p.x, yy, p.r * (1 - near * 0.4), 0, Math.PI * 2); ctx.fill();
           }
-          d.e.setAttribute('cx', d.x.toFixed(1)); d.e.setAttribute('cy', d.y.toFixed(1));
         }
-
-        for (let i = bubbles.length - 1; i >= 0; i--) {
-          const b = bubbles[i];
-          b.life += dt;
-          b.x += (b.vx + Math.sin(t * 2 + i) * 4) * dt; b.y += b.vy * dt;
-          if (b.y < CABIN.y0 - 6 || b.life > b.max) {
-            if (bubbles.length > 26) { b.e.remove(); bubbles.splice(i, 1); continue; }
-            b.x = rand(CABIN.x0, CABIN.x1); b.y = rand(CABIN.y1 - 12, CABIN.y1); b.life = 0; b.max = rand(3, 6);
-          }
-          const k = b.life / b.max, o = k < 0.2 ? k / 0.2 : k > 0.8 ? (1 - k) / 0.2 : 1;
-          b.e.setAttribute('cx', b.x.toFixed(1)); b.e.setAttribute('cy', b.y.toFixed(1)); b.e.setAttribute('opacity', (o * 0.9).toFixed(2));
-        }
-
-        for (let i = smoke.length - 1; i >= 0; i--) {
-          const s = smoke[i];
-          s.life += dt; s.x += s.vx * dt; s.y += s.vy * dt; s.r += 16 * dt;
-          const k = s.life / s.max;
-          if (k >= 1) { s.e.remove(); smoke.splice(i, 1); continue; }
-          s.e.setAttribute('cx', s.x.toFixed(1)); s.e.setAttribute('cy', s.y.toFixed(1)); s.e.setAttribute('r', s.r.toFixed(1)); s.e.setAttribute('opacity', (0.5 * (1 - k)).toFixed(2));
-        }
+        // แสงเรืองเบาๆ ที่แผ่นกรอง
+        const glow = ctx.createLinearGradient(div - 40, 0, div + 40, 0);
+        glow.addColorStop(0, 'rgba(251,191,36,0)'); glow.addColorStop(0.5, 'rgba(251,191,36,0.18)'); glow.addColorStop(1, 'rgba(251,191,36,0)');
+        ctx.fillStyle = glow; ctx.fillRect(div - 40, 0, 80, H);
       }
       function loop(ts) {
         if (!running) return;
@@ -1477,11 +1438,11 @@
         step(dt * SP);
         requestAnimationFrame(loop);
       }
-      for (let i = 0; i < 60; i++) step(0.05);   // เติมฉากให้เต็มตั้งแต่แรก
+      for (let i = 0; i < 40; i++) step(0.05);
       new IntersectionObserver((en) => {
         if (en[0].isIntersecting && !running) { running = true; last = performance.now(); requestAnimationFrame(loop); }
         else if (!en[0].isIntersecting) running = false;
-      }).observe(svg);
+      }).observe(root);
     })();
 
     // --- สไลด์ภาพ About: เล่นอัตโนมัติ, หยุดเมื่อชี้เมาส์, ปัดซ้าย/ขวา, ปุ่มลูกศร, จุดบอกตำแหน่ง ---
