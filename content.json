@@ -1,1 +1,7 @@
-{ "texts": {}, "images": {} }
+{
+  "texts": {},
+  "images": {
+    "assets/filters-ev.webp": "assets/uploads/20261002135815-1-filters-ev.webp"
+  },
+  "updatedAt": "2026-10-02T13:58:19.313Z"
+}
